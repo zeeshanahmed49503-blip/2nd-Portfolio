@@ -1,5 +1,4 @@
 // Check if the screen is Tablet or PC (Width >= 768px)
-if (window.innerWidth >= 768) {
 
     let loader_h1 = document.querySelector(".loader h1")
     let preloader = document.querySelector(".preloader")
@@ -26,6 +25,8 @@ if (window.innerWidth >= 768) {
             }
         }, 20)
     })
+
+    if (window.innerWidth >= 768) {
 
     // spotlight effect on about section text;
     let about_text = document.querySelector(".ab-text")
