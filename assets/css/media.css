@@ -1,0 +1,676 @@
+/* ============================================================
+   AYAN'S PORTFOLIO — RESPONSIVE MEDIA QUERIES
+   Breakpoints:
+     1200px → Large Tablet / Small Laptop
+     1000px → Tablet Landscape
+      768px → Tablet Portrait
+      600px → Small Tablet (overflow fix zone)
+      480px → Mobile
+      360px → Small Mobile
+   ============================================================ */
+
+/* ============================================================
+   GLOBAL OVERFLOW FIX — Yeh SABSE PEHLE lagao
+   Root cause: koi element viewport se bahar ja raha tha
+   ============================================================ */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Har element ko apni parent se bahar jaane se rokta hai */
+header,
+main,
+section,
+.hero-section,
+.about-section,
+.projects-section,
+.project-section,
+.skills-section,
+.contact-wrap {
+  max-width: 100%;
+}
+
+/* Image kabhi bhi container se bahar nahi jayegi */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* ============================================================
+   1200px — LARGE TABLET / SMALL LAPTOP
+   ============================================================ */
+@media (max-width: 1200px) {
+
+  /* --- NAV --- */
+  nav h2 {
+    font-size: 26px;
+  }
+  li {
+    font-size: 16px;
+  }
+
+  /* --- HERO --- */
+  .image-container {
+    min-width: 350px;
+  }
+  .image-container img {
+    height: 430px;
+  }
+
+  /* --- PROJECTS --- */
+  .right-content h2 {
+    font-size: 3.8rem;
+  }
+
+  /* --- SKILLS --- */
+  .skills-section h2 {
+    font-size: 5rem;
+  }
+
+  /* --- CONTACT --- */
+  .contact-heading {
+    font-size: 4rem;
+  }
+  .contact-form {
+    padding: 40px 36px;
+  }
+}
+
+
+/* ============================================================
+   1000px — TABLET LANDSCAPE
+   ============================================================ */
+@media (max-width: 1000px) {
+
+  /* --- NAV --- */
+  nav {
+    align-items: center;
+  }
+  nav h2 {
+    font-size: 24px;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    justify-content: flex-end;
+    max-width: 60%;
+  }
+  nav ul li {
+    font-size: 14px;
+  }
+  nav ul li:hover {
+    padding: 6px;
+  }
+
+  /* --- HERO --- */
+  .hero-section {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding-top: 50px;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .main-title {
+    font-size: 14vw;
+    letter-spacing: -3px;
+  }
+  .hero-sub {
+    margin: 20px auto;
+    font-size: 17px;
+  }
+  .ab-btn {
+    display: inline-block;
+    margin: 10px auto;
+  }
+  .image-container {
+    min-width: unset;
+    width: 100%;
+    
+    border-radius: 20px;
+  }
+  .image-container img {
+    height: 420px;
+    border-radius: 20px;
+  }
+  .blur-up {
+    top: -300px;
+  }
+
+  /* --- ABOUT --- */
+  .about-section {
+    border-radius: 0 250px 250px 0;
+    padding: 10vw 7vw;
+    margin: 40px 0;
+  }
+
+  /* --- PROJECTS --- */
+  .projects-section {
+    margin: 60px 0;
+  }
+  .project-section {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  /* Image always on top when stacked */
+  .project-section .left-img {
+    order: -1;
+  }
+  .left-img img {
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  .right-content {
+    padding: 16px;
+    gap: 14px;
+  }
+  .right-content h2 {
+    font-size: 3.2rem;
+  }
+  .right-content p{
+    margin: 0;
+  }
+  .view-btn {
+    align-self: flex-start;
+  }
+
+  /* --- SKILLS --- */
+  .skills-section {
+    padding: 80px 30px;
+  }
+  .skills-section h2 {
+    font-size: 4rem;
+  }
+
+  /* --- CONTACT --- */
+  .contact-wrap {
+    padding: 60px 30px;
+  }
+  .contact-heading {
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .contact-form {
+    padding: 36px 28px;
+  }
+}
+
+
+/* ============================================================
+   768px — TABLET PORTRAIT
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* --- HEADER / NAV --- */
+  header {
+    padding: 10px 12px;
+  }
+  nav h2 {
+    font-size: 22px;
+  }
+  nav ul {
+    max-width: 55%;
+    gap: 2px 8px;
+  }
+  nav ul li {
+    font-size: 13px;
+  }
+
+  /* --- HERO --- */
+  .hero-section {
+    gap: 30px;
+    padding-top: 40px;
+  }
+  .image-container {
+    width: 80%;
+  }
+  .image-container img {
+    height: 360px;
+  }
+  .main-title {
+    font-size: 16vw;
+    letter-spacing: -2px;
+  }
+  .hero-sub {
+    font-size: 15px;
+  }
+  .blur-up {
+    width: 100%;
+    height: 200px;
+    top: -250px;
+  }
+
+  /* --- ABOUT --- */
+  .about-section {
+    border-radius: 0 150px 150px 0;
+    padding: 12vw 8vw;
+    margin: 30px 0;
+  }
+  .ab-text {
+    font-size: clamp(22px, 5vw, 42px);
+    letter-spacing: -0.5px;
+  }
+
+  /* --- PROJECTS --- */
+  .right-content h2 {
+    font-size: 2.6rem;
+    line-height: 1.05;
+  }
+  .right-content .hero-sub {
+    font-size: 14px;
+    max-width: 100%;
+  }
+  .left-img img {
+    max-height: 100%;
+  }
+
+  /* --- SKILLS --- */
+  .skills-section {
+    padding: 60px 20px;
+    margin: 30px 0;
+    border-radius: 16px;
+  }
+  .skills-section h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 14px;
+  }
+  .skill-card {
+    padding: 18px 12px;
+    border-radius: 12px;
+  }
+  .skill-card img {
+    width: 40px;
+    height: 40px;
+  }
+  .skill-card span {
+    font-size: 0.8rem;
+  }
+
+  /* --- CONTACT --- */
+  .contact-wrap {
+    padding: 50px 20px;
+    border-radius: 16px;
+  }
+  .contact-heading {
+    font-size: 3rem;
+    margin-bottom: 36px;
+  }
+  .contact-form {
+    padding: 28px 20px;
+    border-radius: 18px;
+    gap: 20px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .form-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .send-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 24px;
+  }
+  .socials {
+    gap: 12px;
+  }
+  .field textarea {
+    height: 120px;
+  }
+}
+
+
+/* ============================================================
+   600px — SMALL TABLET / OVERFLOW FIX ZONE
+   Yeh 768px aur 480px ke beech ka gap cover karta hai
+   ============================================================ */
+@media (max-width: 600px) {
+
+  /* --- HERO: image-container ka min-width kill karo --- */
+  .image-container {
+    min-width: 0 !important;   /* base CSS mein 450px tha — yahi overflow ka asli gunehgar */
+    width: 100%;
+    border-radius: 120px 120px 0 0;
+  }
+  .image-container img {
+    height: 300px;
+  }
+  .hero-section {
+    padding: 30px 0 0 0;
+    gap: 24px;
+  }
+
+  /* --- ABOUT: badi border-radius choti screen pe overflow karti thi --- */
+  .about-section {
+    border-radius: 0 80px 80px 0;
+    padding: 12vw 6vw;
+    margin: 24px 0;
+  }
+
+  /* --- MAIN padding reduce --- */
+  main {
+    padding: 0 10px;
+  }
+  header {
+    padding: 8px 10px;
+  }
+
+  /* --- PROJECTS: gap aur padding tight karo --- */
+  .right-content {
+    padding: 12px 4px;
+  }
+  .right-content h2 {
+    font-size: 2.2rem;
+  }
+
+  /* --- CONTACT FORM --- */
+  .contact-wrap {
+    padding: 44px 14px;
+  }
+  .contact-form {
+    padding: 24px 14px;
+  }
+  .contact-heading {
+    font-size: 2.8rem;
+  }
+}
+
+
+/* ============================================================
+   480px — MOBILE
+   ============================================================ */
+@media (max-width: 480px) {
+
+  /* --- GLOBAL --- */
+  body {
+    background-color: black;
+    color: white;
+  }
+
+  /* --- HEADER / NAV --- */
+  header {
+    padding: 8px 12px;
+  }
+  nav h2 {
+    font-size: 20px;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+    max-width: 50%;
+  }
+  nav ul li {
+    font-size: 12px;
+    padding: 3px 0;
+  }
+  nav ul li a {
+    color: white;
+  }
+  nav ul li:hover {
+    padding: 4px;
+  }
+
+  /* --- HERO --- */
+  .hero-section {
+    gap: 24px;
+    padding-top: 28px;
+  }
+  .image-container {
+    width: 100%;
+    border-radius: 50% 50% 0 0;
+  }
+  .image-container img {
+    height: 290px;
+  }
+  .main-title {
+    font-size: 18vw;
+    letter-spacing: -1px;
+  }
+  .hero-sub1 {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.808);
+    text-align: center;
+    margin: 16px auto;
+  }
+  .hero-sub{
+    color: rgba(255, 255, 255, 0.774);
+  }
+  .ab-btn {
+    display: none;
+  }
+  .blur-up {
+    width: 100%;
+    height: 180px;
+    top: -230px;
+    background-color: darkred;
+  }
+
+  /* --- ABOUT --- */
+  .about-section {
+    border-radius: 0 0 150px 150px;
+    margin-top: 0;
+    padding: 14vw 8vw;
+  }
+  .ab-text {
+    font-size: clamp(18px, 6vw, 30px);
+    text-align: center;
+    letter-spacing: 0px;
+  }
+  .loader-container {
+    justify-content: center;
+    margin-top: 16px;
+  }
+  .dot {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* --- PROJECTS --- */
+  .projects-section {
+    margin: 40px 0;
+  }
+  .project-section {
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .left-img img {
+    max-height: 100%;
+    border-radius: 10px;
+  }
+  .right-content {
+    padding: 12px 8px;
+    gap: 12px;
+  }
+  .right-content h2 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  .right-content .hero-sub {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .view-btn {
+    width: 100%;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    padding: 12px 20px;
+  }
+
+  /* --- SKILLS --- */
+  .skills-section {
+    padding: 48px 16px;
+    margin: 24px 0;
+    border-radius: 12px;
+  }
+  .skills-section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 28px;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+  }
+  .skill-card {
+    padding: 14px 8px;
+    border-radius: 10px;
+    gap: 8px;
+  }
+  .skill-card img {
+    width: 34px;
+    height: 34px;
+  }
+  .skill-card span {
+    font-size: 0.72rem;
+  }
+
+  /* --- CONTACT --- */
+  .contact-wrap {
+    padding: 40px 14px;
+    border-radius: 12px;
+  }
+  .contact-heading {
+    font-size: 2.4rem;
+    margin-bottom: 28px;
+    line-height: 1.05;
+  }
+  .contact-form {
+    padding: 22px 14px;
+    border-radius: 14px;
+    gap: 16px;
+  }
+  .field label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+  .field input,
+  .field textarea {
+    font-size: 0.83rem;
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+  .field textarea {
+    height: 110px;
+  }
+  .form-bottom {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .socials {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .social-link {
+    width: 38px;
+    height: 38px;
+  }
+  .social-link svg {
+    width: 14px;
+    height: 14px;
+  }
+  .send-btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 14px 20px;
+    border-radius: 40px;
+  }
+}
+
+
+/* ============================================================
+   360px — SMALL MOBILE (Samsung Galaxy S8, older iPhones)
+   ============================================================ */
+@media (max-width: 360px) {
+
+  /* --- NAV --- */
+  nav h2 {
+    font-size: 17px;
+  }
+  nav ul li {
+    font-size: 11px;
+    color: black;
+  }
+
+  /* --- HERO --- */
+  .main-title {
+    font-size: 20vw;
+  }
+  .image-container img {
+    height: 240px;
+  }
+  .hero-sub {
+    font-size: 12px;
+  }
+
+  /* --- ABOUT --- */
+  .ab-text {
+    font-size: 17px;
+  }
+  .about-section {
+    border-radius: 0 0 100px 100px;
+  }
+
+  /* --- PROJECTS --- */
+  .right-content h2 {
+    font-size: 1.7rem;
+  }
+  .left-img img {
+    max-height: 200px;
+  }
+
+  /* --- SKILLS --- */
+  .skills-section h2 {
+    font-size: 2rem;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .skill-card {
+    padding: 12px 6px;
+  }
+  .skill-card img {
+    width: 28px;
+    height: 28px;
+  }
+  .skill-card span {
+    font-size: 0.65rem;
+  }
+
+  /* --- CONTACT --- */
+  .contact-heading {
+    font-size: 2rem;
+  }
+  .contact-form {
+    padding: 18px 12px;
+  }
+  .send-btn {
+    font-size: 0.8rem;
+    padding: 12px 16px;
+  }
+}
