@@ -440,22 +440,6 @@ button{
     margin: 50px 0;
     border-radius: 20px;
   }
-  .skills-section::before{
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 200px;
-    z-index: -1;
-    filter: blur(200px);
-    transform: translate(-50%);
-    width: 600px;
-    height: 200px;
-    background-color:darkred;
-    transition: 1s;
-  }
-  .skills-section:hover::before{
-    bottom: -200px;
-  }
    .cursor-blob {
     position: absolute;
     width: 300px;
@@ -483,6 +467,13 @@ button{
     margin-bottom: 40px;
     line-height: 1;
   }
+  .gh{
+    filter: invert(1);
+  }
+  .gh:hover{
+    filter: invert(0);
+  }
+ 
 
   .skills-section h2 span{
     color: white;
@@ -493,6 +484,26 @@ button{
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 24px;
   }
+
+  .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  border-radius: 999px;
+  letter-spacing: .02em;
+}
+.badge-sm { font-size: 12px; padding: 7px 12px; }
+.badge-dot-sm { width: 7px; height: 7px; }
+
+.html { background: #FAECE7; color: #993C1D; }
+.html .badge-dot { background: #D85A30; }
+
+.css { background: #E6F1FB; color: #185FA5; }
+.css .badge-dot { background: #378ADD; }
+
+.js { background: #FAEEDA; color: #854F0B; }
+.js .badge-dot { background: #BA7517; }
 
   .skill-card {
     display: flex;

@@ -72,32 +72,4 @@
         }
     }
 
-    const section = document.querySelector('.skills-section');
-    const github = document.querySelector('.gh');
-    const blob = document.getElementById('blob');
-    github.style.filter = "invert(1)"
-
-    section.addEventListener('mousemove', (e) => {
-        document.body.style.backgroundColor = "black"
-        document.body.style.color = "white"
-        const rect = section.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        blob.style.left = x + 'px';
-        blob.style.top = y + 'px';
-    });
-
-    section.addEventListener('mouseleave', (e) => {
-        document.body.style.backgroundColor = "white"
-        github.style.filter = "invert(0)"
-        document.body.style.color = "black"
-        
-        const rect = section.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        blob.style.left = x + 'px';
-        blob.style.top = y + 'px';
-    });
 }
