@@ -14,13 +14,13 @@
 </head>
 
 <body>
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="inner-loader">
             <div class="loader">
                 <h1>50</h1>
             </div>
         </div>
-    </div>
+    </div> -->
     <header>
         <nav>
             <h2>portfolio.</h2>
@@ -155,6 +155,15 @@
             </section>
         </section>
 
+        <section class="services">
+
+  <div class="service-item">Landing Page Design</div>
+  <div class="service-item">Frontend Development</div>
+  <div class="service-item">UI Design</div>
+  <div class="service-item">Responsive Websites</div>
+  <div class="service-item">Website Redesign</div>
+        </section>
+
         
         <section class="skills-section">
 
@@ -211,28 +220,27 @@
      
     </div>
 
-    <!-- RIGHT FORM -->
-    <div class="contact-form">
+    <form action="assets/PHP/index.php" id="contactForm" class="contact-form" method="post">
 
       <div class="form-row">
         <div class="field">
           <label>Your Name</label>
-          <input type="text" placeholder="Ayan Ahmed">
+          <input type="text" name="name" required placeholder="Ayan Ahmed">
         </div>
         <div class="field">
           <label>Email Address</label>
-          <input type="email" placeholder="hello@email.com">
+          <input type="email" required name="email" placeholder="hello@email.com">
         </div>
       </div>
 
       <div class="field">
         <label>Subject</label>
-        <input type="text" placeholder="Project Inquiry">
+        <input type="text" name="subject" placeholder="Project Inquiry">
       </div>
 
       <div class="field">
         <label>Message</label>
-        <textarea placeholder="Tell me about your project..."></textarea>
+        <textarea name="message" required placeholder="Tell me about your project..."></textarea>
       </div>
 
       <div class="form-bottom">
@@ -260,14 +268,14 @@
 
       </div>
 
-        <button class="send-btn">
+        <button class="send-btn" id="sendBtn">
           Send Message
           <span class="arrow-circle">→</span>
         </button>
         
       </div>
 
-    </div>
+    </form>
 
   </div>
 
@@ -277,7 +285,35 @@
         
 
     </main>
+    
+    <script>
+window.onload = () => {
 
+  const form = document.getElementById("contactForm");
+  if(window.location.search.includes("success=1")){
+    form.scrollIntoView()
+  }
+
+    if(window.location.search.includes("error=empty")){
+    alert("Please fill all fields!");
+  }
+  
+  if(window.location.search.includes("success=1")){
+    const btn = document.getElementById('sendBtn');
+
+    btn.innerText = 'Sent Successfully';
+    btn.style.background = 'green';
+    btn.style.color = 'white';
+
+    setTimeout(() => {
+      btn.innerText = 'Send Message';
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 3000);
+  }
+
+}
+</script>
     <script src="assets/js/script.js"></script>
 </body>
 
