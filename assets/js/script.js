@@ -29,20 +29,20 @@
     if (window.innerWidth >= 768) {
 
     // spotlight effect on about section text;
-    let about_text = document.querySelector(".ab-text")
-    let spolight_timer; // Declaring it here to avoid scope issues
+    // let about_text = document.querySelector(".ab-text")
+    // let spolight_timer; // Declaring it here to avoid scope issues
 
-    about_text.addEventListener("mouseenter", () => {
-        document.body.style.backgroundColor = "black"
-        document.body.style.color = "white"
-        clearTimeout(spolight_timer)
-    })
-    about_text.addEventListener("mouseleave", () => {
-        spolight_timer = setTimeout(() => {
-            document.body.style.backgroundColor = "white"
-            document.body.style.color = "black"
-        }, 1000)
-    })
+    // about_text.addEventListener("mouseenter", () => {
+    //     document.body.style.backgroundColor = "black"
+    //     document.body.style.color = "white"
+    //     clearTimeout(spolight_timer)
+    // })
+    // about_text.addEventListener("mouseleave", () => {
+    //     spolight_timer = setTimeout(() => {
+    //         document.body.style.backgroundColor = "white"
+    //         document.body.style.color = "black"
+    //     }, 1000)
+    // })
 
     const paraMap = document.getElementById('para-map');
     const para = document.querySelector('.liquid-para');

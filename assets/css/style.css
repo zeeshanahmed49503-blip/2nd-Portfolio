@@ -4,10 +4,23 @@
     box-sizing: border-box;
     text-transform: capitalize;
     font-family: 'normal';
+    text-decoration: none;
 }
 body{
     transition: 1s;
     overflow-x: hidden;
+    background-color: #faf0f0
+
+;
+}
+a{
+  color: darkred;
+}
+a:hover{
+  color: rgb(255, 255, 255);
+}
+ .project-section a{
+  color: white;
 }
 
 body.active{
@@ -129,17 +142,30 @@ position: relative;
 }
 
 button{
-    padding: 10px 20px;
+    padding: 14px 20px;
     border: none;
-    border-radius: 0 20px 20px 0;
+    border-radius: 40px;
     background-color: darkred;
     color: white;
     cursor: pointer;
-    font-size: 18px;
-    margin: 20px 0;
+    font-size: 14px;
+    margin: 30px 5px;
     position: relative;
     transition:  .4s;
+      border: 2px solid darkred;
+
+transition: .5s;
 }
+.btn2{
+  background-color: transparent;
+  color: darkred;
+  border: 2px solid darkred;
+}
+button:hover{
+  background-color:darkred;
+  color: white;
+}
+
 .blur-up{
     width: 300px;
     height: 300px;
@@ -206,13 +232,14 @@ button{
 .about-section {
     width: 100%;
     min-height: 50vh; /* Content ke hisab se adjust hoga */
-    border-radius: 0px 700px 700px 0px;
+    border-radius: 20px;
+
     margin: 50px 0;
     padding: 10vw 5vw;
     
     /* Solid red ke bajaye Dark theme with red borders */
     background-color: #050505; 
-    text-align: left;
+    text-align: center;
     position: relative;
     display: flex;
     align-items: center;
@@ -290,8 +317,9 @@ button{
 .loader-container {
     display: flex;
     gap: 15px;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
 .dot {
@@ -300,6 +328,7 @@ button{
     border-radius: 50%;
     animation: bounce 3s infinite ease-in-out;
     margin-top: 30px;
+
 }
 
 /* Colors */
@@ -353,6 +382,7 @@ button{
 }
 .projects-section{
     margin: 100px 0;
+    
 }
 
  .project-section {
@@ -365,12 +395,14 @@ button{
   }
 
   .left-img img {
-    width: 100%;
     height: 100%;
+    max-width: 100%;
     object-fit: cover;
+    object-position: center;
     filter: saturate(1);
     transition: 1s;
     cursor: pointer;
+    border-radius: 20px;
   }
   /* .left-img img:hover{
     scale: 0.99;
@@ -431,7 +463,7 @@ button{
 
 
   .skills-section {
-    padding: 100px 40px;
+    padding:40px ;
     /* background-color: #000; */
     margin-bottom: 50px;
     color: white;
@@ -466,6 +498,7 @@ button{
     font-weight: lighter;
     margin-bottom: 40px;
     line-height: 1;
+    margin-top: 80px;
   }
   .gh{
     filter: invert(1);
@@ -544,7 +577,8 @@ button{
   .contact-wrap {
     width: 100%;
     background-color: rgb(0, 0, 0);
-    padding: 70px 40px;
+    padding: 40px 40px;
+    padding-bottom: 50px;
     margin: 20px 0;
     border-radius: 20px;
   }
@@ -564,6 +598,7 @@ button{
     font-size: clamp(3rem, 6vw, 5.5rem);
     line-height: 1;
     margin-bottom: 60px;
+    margin-top: 80px;
   }
 
   .contact-heading span {
@@ -748,10 +783,10 @@ button{
   padding: 20px;
   background-color: black;
   border-radius: 20px;
-  padding-top: 100px;
+  /* padding-top: 100px; */
   position: relative;
 }
-.services::before{
+/* .services::before{
   content: "My Service's";
   background: linear-gradient(45deg, darkred);
   color: white;
@@ -766,7 +801,7 @@ button{
   font-family: 'italic';
   z-index: 67;
   transition: .4s;
-}
+} */
 
 
 
@@ -775,8 +810,7 @@ button{
   padding: 50px 20px;
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
-  
-  font-size: 5vw;
+  font-size: 4.5vw;
   font-weight: lighter;
   text-align: left;
   text-transform: uppercase;
@@ -786,6 +820,26 @@ button{
   transition: 1s;
   overflow: hidden;
   z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.service-item span:first-child{
+    text-transform: uppercase;
+    font-weight: normal;
+
+}
+.service-item span:last-child{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: grey;
+
+}
+.service-item:first-child{
+  border-top: 0px;
+}
+.service-item:last-child{
+  border-bottom: 0px;
 }
 
 /* hover effect */
@@ -836,3 +890,57 @@ button{
   font-family: 'italic';
 }
  
+.badge-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  /* background-color: black; */
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.badge-container::before{
+  width: 50%;
+  height: 3000px;
+  background-color: #910000;
+  content: "";
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  filter: blur(100px);
+  border-radius: 50%;
+  z-index: 99;
+}
+/* .badge-container::after{
+  width: 80%;
+  height: 300px;
+  background-color: #ff000091;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  filter: blur(100px);
+  border-radius: 50%;
+} */
+.b1,.b2{
+  color: white;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 7px 20px;
+  font-size: 17px;
+  transition: .4s;
+  cursor: pointer;
+  z-index: 999;
+}
+.b2:hover{
+  color: darkred;
+  border-color: darkred;
+}
+.b2 span{
+ 
+  padding: 5px;
+}
