@@ -27,23 +27,6 @@
     })
 
     if (window.innerWidth >= 768) {
-
-    // spotlight effect on about section text;
-    // let about_text = document.querySelector(".ab-text")
-    // let spolight_timer; // Declaring it here to avoid scope issues
-
-    // about_text.addEventListener("mouseenter", () => {
-    //     document.body.style.backgroundColor = "black"
-    //     document.body.style.color = "white"
-    //     clearTimeout(spolight_timer)
-    // })
-    // about_text.addEventListener("mouseleave", () => {
-    //     spolight_timer = setTimeout(() => {
-    //         document.body.style.backgroundColor = "white"
-    //         document.body.style.color = "black"
-    //     }, 1000)
-    // })
-
     const paraMap = document.getElementById('para-map');
     const para = document.querySelector('.liquid-para');
     let animationId;
@@ -73,3 +56,26 @@
     }
 
 }
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navMenu.classList.toggle('open');
+
+    // Scroll lock toggle
+    if (navMenu.classList.contains('open')) {
+        document.body.style.overflow = 'hidden'; // scroll band
+    } else {
+        document.body.style.overflow = '';        // scroll wapas
+    }
+});
+
+// Jab koi link click ho → menu band ho jaye
+navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navMenu.classList.remove('open');
+        document.body.style.overflow = ''; // scroll wapas
+    });
+});

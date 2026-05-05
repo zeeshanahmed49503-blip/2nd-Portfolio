@@ -1,18 +1,3 @@
-/* ============================================================
-   AYAN'S PORTFOLIO — RESPONSIVE MEDIA QUERIES
-   Breakpoints:
-     1200px → Large Tablet / Small Laptop
-     1000px → Tablet Landscape
-      768px → Tablet Portrait
-      600px → Small Tablet (overflow fix zone)
-      480px → Mobile
-      360px → Small Mobile
-   ============================================================ */
-
-/* ============================================================
-   GLOBAL OVERFLOW FIX — Yeh SABSE PEHLE lagao
-   Root cause: koi element viewport se bahar ja raha tha
-   ============================================================ */
 html,
 body {
   overflow-x: hidden;
@@ -94,14 +79,14 @@ img {
   }
   nav ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 4px 12px;
     justify-content: flex-end;
     max-width: 60%;
   }
   nav ul li {
-    font-size: 14px;
+    font-size: 16px;
   }
   nav ul li:hover {
     padding: 6px;
@@ -129,10 +114,7 @@ img {
     margin: 20px auto;
     font-size: 17px;
   }
-  .ab-btn {
-    display: inline-block;
-    margin: 10px auto;
-  }
+
   .image-container {
     min-width: unset;
     width: 100%;
@@ -149,7 +131,7 @@ img {
 
   /* --- ABOUT --- */
   .about-section {
-    border-radius: 0 250px 250px 0;
+    border-radius: 20px;
     padding: 10vw 7vw;
     margin: 40px 0;
   }
@@ -257,7 +239,7 @@ img {
 
   /* --- ABOUT --- */
   .about-section {
-    border-radius: 0 150px 150px 0;
+    border-radius: 20px;
     padding: 12vw 8vw;
     margin: 30px 0;
   }
@@ -352,7 +334,7 @@ img {
   .image-container {
     min-width: 0 !important;   /* base CSS mein 450px tha — yahi overflow ka asli gunehgar */
     width: 100%;
-    border-radius: 120px 120px 0 0;
+    border-radius: 20px;
   }
   .image-container img {
     height: 300px;
@@ -364,7 +346,7 @@ img {
 
   /* --- ABOUT: badi border-radius choti screen pe overflow karti thi --- */
   .about-section {
-    border-radius: 0 80px 80px 0;
+    border-radius: 20px;
     padding: 12vw 6vw;
     margin: 24px 0;
   }
@@ -397,6 +379,54 @@ img {
   }
 }
 
+@media (max-width: 500px) {
+
+    nav {
+        align-items: center;
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex; /* ab dikhega */
+
+    }
+
+    #navMenu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;       /* pehle screen ke bahar */
+        width: 65%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.26);
+        backdrop-filter: blur(50px);
+        box-shadow: -3px 0 15px rgba(0,0,0,0.15);
+        padding: 80px 30px 30px;
+        gap: 10px;
+        z-index: 998;
+        transition: right 0.4s ease; /* smooth slide */
+    }
+    #navMenu li a{
+      font-size: 17px;
+    }
+
+    /* Jab menu open ho */
+    #navMenu.open {
+        right: 0;
+    }
+
+    /* X shape jab open ho */
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
 
 /* ============================================================
    480px — MOBILE
@@ -408,6 +438,42 @@ img {
     background-color: black;
     color: white;
   }
+  .service-item span:last-child{
+    text-transform: uppercase;
+    font-size: 10px;
+    color: grey;
+
+}
+.service-item::after{
+  content: "";
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  filter: blur(50px);
+  background: linear-gradient(to left,darkred,white);
+  opacity: 0;
+  transition: .3s;
+  border-radius: 300px;
+}
+.btn-container{
+  margin: 50px 0;
+}
+.service-item:hover {
+  background: transparent;
+  color: white;
+  padding:100px 5px;
+}
+.contact-heading{
+  margin-top: 30px;
+}
+.skills-section h2{
+  margin-top: 30px;
+}
+.service-item{
+  padding: 30px 0;
+}
 
   /* --- HEADER / NAV --- */
   header {
@@ -451,16 +517,17 @@ img {
     letter-spacing: -1px;
   }
   .hero-sub1 {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.808);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.598);
     text-align: center;
     margin: 16px auto;
+    display: none;
   }
   .hero-sub{
     color: rgba(255, 255, 255, 0.774);
   }
   .ab-btn {
-    display: none;
+    /* display: none; */
   }
   .blur-up {
     width: 100%;

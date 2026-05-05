@@ -23,19 +23,28 @@
         </div>
     </div> -->
   <header>
-    <nav>
-      <h2>portfolio.</h2>
-      <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="#">about me</a></li>
-        <li><a href="#">projects</a></li>
-        <li><a href="#">contact</a></li>
-      </ul>
-    </nav>
+ <nav>
+  <h2>portfolio.</h2>
+  
+  <!-- Hamburger Button (sirf mobile par dikhega) -->
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <ul id="navMenu">
+    <li><a href="#home">home</a></li>
+    <li><a href="#about">about</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#services">services</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
   </header>
   <main>
 
-    <section class="hero-section">
+    <section class="hero-section" id="home">
       <div class="blur-up"></div>
       <div class="image-container">
         <img src="assets/images/me2.png" alt="">
@@ -47,13 +56,13 @@
         </h1>
         <p class="hero-sub1">Crafting digital experiences through clean code and modern design aesthetics.</p>
         <div class="btn-container">
-          <button class="ab-btn">View Projects</button>
-          <button class="ab-btn btn2"><a href="Ayan Ahmed CV.pdf" target="_blank">Download CV</a></button>
+          <a class="ab-btn" href="#projects">View Projects</a>
+          <a class="ab-btn btn2" href="Ayan Ahmed CV.pdf" target="_blank">Download CV</a>
         </div>
       </div>
     </section>
 
-    <section class="about-section">
+    <section class="about-section" id="about">
       <div class="about-content">
 
         <h2 class="ab-text liquid-para">
@@ -83,7 +92,7 @@
     </section>
 
 
-    <section class="projects-section">
+    <section class="projects-section" id="projects">
       <div class="badge-container">
         <h1 class="b1"> 02 - projects</h1>
       </div>
@@ -161,7 +170,7 @@
       </section>
     </section>
 
-    <section class="services">
+    <section class="services" id="services">
       <div class="badge-container">
         <h1 class="b1"> 03 - Services</h1>
       </div>
@@ -223,7 +232,7 @@
     </section>
 
 
-    <div class="contact-wrap">
+    <div class="contact-wrap" id="contact">
       <div class="badge-container">
         <h1 class="b1"> 05 - Contact</h1>
       </div>

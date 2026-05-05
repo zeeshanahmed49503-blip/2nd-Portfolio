@@ -6,15 +6,41 @@
     font-family: 'normal';
     text-decoration: none;
 }
+html {
+    scroll-behavior: smooth;
+}
 body{
-    transition: 1s;
     overflow-x: hidden;
     background-color: #faf0f0
 
 ;
 }
-a{
+.btn-container{
+  margin-top: 40px;
+}
+.btn-container .btn2{
+  background-color: transparent;
   color: darkred;
+  border: 2px solid darkred;
+  margin: 0 7px;
+}
+.btn-container .btn2:hover{
+  background-color:darkred;
+  color: white;
+}
+.hero-section a{
+  color: darkred;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 40px;
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 100px;
+    position: relative;
+    transition:  .4s;
+      border: 2px solid darkred;
 }
 a:hover{
   color: rgb(255, 255, 255);
@@ -45,31 +71,53 @@ header{
     margin: auto;
     padding: 10px 15px;
 }
-nav{
+nav {
     width: 100%;
     max-height: 110px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
-nav h2{
+nav h2 {
     font-size: 30px;
 }
-ul{
+ul {
     list-style: none;
     z-index: 99;
 }
-li{
+li {
     padding: 4px 0;
     font-size: 18px;
     transition: 1s;
 }
-li a{
+li a {
     text-decoration: none;
     color: black;
 }
-ul li:hover{
-   padding: 10px;
+ul li:hover {
+    padding: 10px;
+}
+ul li a:hover {
+    color: black;
+}
+
+.hamburger {
+    display: none; 
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 999;
+}
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    transition: all 0.3s ease;
 }
 main{
     max-width: 1400px;
@@ -156,15 +204,7 @@ button{
 
 transition: .5s;
 }
-.btn2{
-  background-color: transparent;
-  color: darkred;
-  border: 2px solid darkred;
-}
-button:hover{
-  background-color:darkred;
-  color: white;
-}
+
 
 .blur-up{
     width: 300px;
@@ -779,31 +819,13 @@ button:hover{
 
   .services {
   width: 100%;
-  background-color: #185FA5;
+  /* background-color: #185FA5; */
   padding: 20px;
   background-color: black;
   border-radius: 20px;
   /* padding-top: 100px; */
   position: relative;
 }
-/* .services::before{
-  content: "My Service's";
-  background: linear-gradient(45deg, darkred);
-  color: white;
-  padding: 18px 40px;
-  border-radius: 40px 40px 40px 0px;
-  font-size: 18px;
-  font-weight: 500;
-  position: absolute;
-  top: -30px;
-  left: 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  font-family: 'italic';
-  z-index: 67;
-  transition: .4s;
-} */
-
-
 
 .service-item {
   width: 100%;
